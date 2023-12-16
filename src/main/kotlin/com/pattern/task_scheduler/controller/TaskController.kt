@@ -55,14 +55,7 @@ class TaskController(private val taskService: TaskService) {
     @GetMapping("/start/{taskId}")
     fun startTask(@PathVariable taskId: Long): String {
         taskService.startTask(taskId)
-        return "redirect:/tasks/inProgress"
-    }
-    @GetMapping("/inProgress")
-    fun tasksInProgress(model: Model): String {
-        val username = "currentLoggedInUser" // Замените на актуальное имя пользователя
-        val tasks = taskService.getTasksInProgress(username)
-        model.addAttribute("tasks", tasks)
-        return "tasks/inProgress"
+        return "redirect:/tasks/createdByMe"
     }
 
     @GetMapping("/complete/{taskId}")
