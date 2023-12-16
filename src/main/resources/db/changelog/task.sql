@@ -1,0 +1,3 @@
+-- alter table task
+--     add constraint FK2hsytmxysatfvt0p1992cw449
+--         foreign key (user_id) references "user";

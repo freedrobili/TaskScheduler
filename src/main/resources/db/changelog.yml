@@ -1,0 +1,9 @@
+#databaseChangeLog:
+#  - include:
+#      file: db/changelog/1_tasks.sql
+#  - include:
+#      file: db/changelog/2_attachment.sql
+#  - include:
+#      file: db/changelog/3_tags.sql
+#  - include:
+#      file: db/changelog/4_comments.sql
