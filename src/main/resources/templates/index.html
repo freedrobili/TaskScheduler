@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Planner</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #444;
+            overflow: hidden;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            flex-grow: 1;
+            margin: 20px;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .employees {
+            flex-basis: 30%;
+            padding: 20px;
+            background-color: #eee;
+        }
+
+        .employees ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .employees li {
+            margin-bottom: 10px;
+        }
+
+        .employees a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .employees a:hover {
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Task Planner</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="/tasks/createdByMe">Tasks Created by Me</a></li>
+        <li><a href="/tasks/assignedToMe">Tasks Assigned to Me</a></li>
+        <li><a href="/tasks/favorites">Favorite Tasks</a></li>
+        <li><a href="/tasks/add">Add Task</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <section class="content">
+        <!-- Content goes here -->
+        <p>Welcome to the Task Planner application!</p>
+    </section>
+
+    <aside class="employees">
+        <h2>Employee List</h2>
+        <ul>
+            <li><a href="#">John Doe</a></li>
+            <li><a href="#">Jane Smith</a></li>
+            <li><a href="#">Robert Johnson</a></li>
+            <!-- Добавьте дополнительные имена сотрудников по мере необходимости -->
+        </ul>
+    </aside>
+
+</div>
+
+<footer>
+    <p>&copy; 2023 Task Planner</p>
+</footer>
+
+</body>
+</html>
+

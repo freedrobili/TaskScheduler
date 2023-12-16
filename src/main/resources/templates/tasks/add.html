@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #444;
+            overflow: hidden;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto; /* увеличил margin */
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Add Task</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="/tasks/createdByMe">Tasks Created by Me</a></li>
+        <li><a href="/tasks/assignedToMe">Tasks Assigned to Me</a></li>
+        <li><a href="/tasks/favorites">Favorite Tasks</a></li>
+        <li><a href="/tasks/add">Add Task</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <form action="/tasks/add" method="post" class="content">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        <br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description">
+        <br>
+
+        <label for="assignedTo">Assigned To:</label>
+        <input type="text" id="assignedTo" name="assignedTo">
+        <br>
+
+        <label for="isFavorite">Favorite:</label>
+        <input type="checkbox" id="isFavorite" name="isFavorite">
+        <br>
+
+        <button type="submit">Add Task</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2023 Task Planner</p>
+</footer>
+
+</body>
+</html>

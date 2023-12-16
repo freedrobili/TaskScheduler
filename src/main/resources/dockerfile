@@ -1,0 +1,17 @@
+# Используем официальный образ PostgreSQL
+FROM postgres:latest
+
+# Задаем переменные окружения для настройки PostgreSQL
+ENV POSTGRES_DB=taskDB \
+    POSTGRES_USER=postgres \
+    POSTGRES_PASSWORD=postgres
+
+# Задаем переменные окружения для разрешения удаленных подключений
+# (необходимо только для тестового окружения, установите более строгие правила в продакшене)
+ENV POSTGRES_HOST_AUTH_METHOD=trust
+
+# Копируем файлы инициализации в образ (если они нужны)
+# COPY ./init.sql /docker-entrypoint-initdb.d/
+
+# Это указывает, что контейнер будет слушать порт 5432
+EXPOSE 5432
