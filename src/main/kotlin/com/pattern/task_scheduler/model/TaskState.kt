@@ -1,4 +1,4 @@
-package com.pattern.task_scheduler
+package com.pattern.task_scheduler.model
 
 enum class TaskState {
     PLANNED,

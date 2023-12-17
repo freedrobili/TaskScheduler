@@ -1,7 +1,5 @@
 package com.pattern.task_scheduler.model
 
-import com.pattern.task_scheduler.TaskState
-
 
 object PlannedStateHandler : TaskStateHandler {
     override fun start(task: Task) {
