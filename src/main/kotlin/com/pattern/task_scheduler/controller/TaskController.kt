@@ -22,13 +22,13 @@ class TaskController(private val taskService: TaskService) {
         return "tasks/createdByMe"
     }
 
-    @GetMapping("/assignedToMe")
-    fun tasksAssignedToMe(model: Model): String {
-        val username = "currentLoggedInUser" // Замените на актуальное имя пользователя
-        val tasks = taskService.getTasksAssignedTo(username)
-        model.addAttribute("tasks", tasks)
-        return "tasks/assignedToMe"
-    }
+//    @GetMapping("/assignedToMe")
+//    fun tasksAssignedToMe(model: Model): String {
+//        val username = "currentLoggedInUser" // Замените на актуальное имя пользователя
+//        val tasks = taskService.getTasksAssignedTo(username)
+//        model.addAttribute("tasks", tasks)
+//        return "tasks/assignedToMe"
+//    }
 
     @GetMapping("/favorites")
     fun favoriteTasks(model: Model): String {
@@ -62,12 +62,30 @@ class TaskController(private val taskService: TaskService) {
     fun completeTask(@PathVariable taskId: Long): String {
         taskService.completeTask(taskId)
         return "redirect:/tasks/createdByMe"
+//        return "redirect:/tasks/complete"
     }
 
     @GetMapping("/revert/{taskId}")
     fun revertTask(@PathVariable taskId: Long): String {
         taskService.revertTask(taskId)
         return "redirect:/tasks/createdByMe"
+//        return "redirect:/tasks/revert"
+    }
+
+    @GetMapping("/inProgress")
+    fun tasksInProgress(model: Model): String {
+        val username = "currentLoggedInUser"
+        val tasks = taskService.getTasksInProgress(username)
+        model.addAttribute("tasks", tasks)
+        return "tasks/inProgress"
+    }
+
+    @GetMapping("/completed")
+    fun completedTasks(model: Model): String {
+        val username = "currentLoggedInUser"
+        val tasks = taskService.getCompletedTasks(username)
+        model.addAttribute("tasks", tasks)
+        return "tasks/completed"
     }
 
 

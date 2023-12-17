@@ -33,7 +33,7 @@ data class Task(
         stateHandler.revert(task)
     }
 
-    private val stateHandler: TaskStateHandler
+    val stateHandler: TaskStateHandler
         get() {
             return when (state) {
                 TaskState.PLANNED -> PlannedStateHandler
